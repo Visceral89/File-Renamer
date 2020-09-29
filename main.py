@@ -3,15 +3,32 @@
 # Good starting point https://www.geeksforgeeks.org/rename-multiple-files-using-python/
 
 import os #Here we are importing OS library
+import tkinter as tk
+import requests
 
-def main():
+input_dir = ""
+output_dir = ""
+count = 1
+directory = ""
+suffix = ""
 
-    for count, filename in enumerate(os.listdir("xyz")): #getting the files in specified directory
-        dst = prefix + str(count) + ".jpg"
-        src = xyz + filename
-        dst = xyz + dst
+#Setting up the root window.
+root = tk.TK()
 
-        os.rename(src, dst)
 
-if __name__ =="__main__":
-    main()
+root.mainloop()
+
+
+os.chdir(directory)
+
+def increment():
+    global count
+    count = count + 1
+
+for file in os.listdir():
+    file_name, file_ext = os.path.split(file)
+    file_name = suffix + str(count)
+    increment()
+
+    new_name = "{} {}".format(file_name, file_ext)
+    os.rename(file, new_name)
