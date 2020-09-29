@@ -6,6 +6,9 @@ import os #Here we are importing OS library
 import tkinter as tk
 import requests
 
+height = 600
+width = 800
+
 input_dir = ""
 output_dir = ""
 count = 1
@@ -13,8 +16,11 @@ directory = ""
 suffix = ""
 
 #Setting up the root window.
-root = tk.TK()
+root = tk.Tk()
 
+#main container
+canvas = tk.Canvas(root, height=height,width= width)
+canvas.pack()
 
 root.mainloop()
 
